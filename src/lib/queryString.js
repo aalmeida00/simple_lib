@@ -1,6 +1,6 @@
-module.exports.queryString = (object) => {
+module.exports.queryString = object => {
   const entries = Object.entries(object).map(item => {
-    return `${item[0]}=${item[1]}`
-  })
-  return entries.join('&')
-}
+    return `${item[0]}=${item[1]}`;
+  });
+  return entries.join('&');
+};
