@@ -8,9 +8,9 @@ const keyValueToString = ([key, value]) => {
 module.exports.queryString = object =>
   Object.entries(object).map(keyValueToString).join('&');
 
-module.exports.parse = string => 
-Object.fromEntries(string.split('&').map(item => {
-  let [key, value] = item.split('=')
-  if (value.indexOf(',') > -1) value = value.split(',');
-  return [key, value];
-}))
+module.exports.parse = string =>
+  Object.fromEntries(string.split('&').map(item => {
+    let [key, value] = item.split('=')
+    if (value.indexOf(',') > -1) value = value.split(',');
+    return [key, value];
+  }))

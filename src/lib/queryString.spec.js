@@ -35,28 +35,28 @@ describe('Object to query string', () => {
 });
 
 describe('Object to query string', () => {
- it('should convert a query string to object', () => {
-  const qs = 'name=Andre&job=Developer';
-  expect(parse(qs)).toEqual({
-    name: 'Andre',
-    job: 'Developer',
-  });
- })
-
- it('should convert a query string of a single key-value', () => {
-  const qs = 'name=Andre';
-  expect(parse(qs)).toEqual({
-    name: 'Andre'
-  });
- })
- it('should convert a query string to a object taking care if have any separation', () => {
-  const qs = 'name=Andre&job=Developer&skills=JS,React,Jest'
-
-  expect(parse(qs)).toEqual({
-    name: 'Andre',
-    job: 'Developer',
-    skills: ['JS', 'React', 'Jest']
+  it('should convert a query string to object', () => {
+    const qs = 'name=Andre&job=Developer';
+    expect(parse(qs)).toEqual({
+      name: 'Andre',
+      job: 'Developer',
+    });
   })
 
- })
+  it('should convert a query string of a single key-value', () => {
+    const qs = 'name=Andre';
+    expect(parse(qs)).toEqual({
+      name: 'Andre'
+    });
+  })
+  it('should convert a query string to a object taking care if have any separation', () => {
+    const qs = 'name=Andre&job=Developer&skills=JS,React,Jest'
+
+    expect(parse(qs)).toEqual({
+      name: 'Andre',
+      job: 'Developer',
+      skills: ['JS', 'React', 'Jest']
+    })
+
+  })
 })
